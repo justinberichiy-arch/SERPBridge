@@ -20,17 +20,17 @@ notion.so,notion ai###docs app
 
 Put the actual task file here:
 
-- [tasks.csv](/Users/sdlk/Documents/cursor_projects/SERPBridge/inputs/tasks.csv)
+- [tasks.csv](SERPBridge/inputs/tasks.csv)
 
 Example template:
 
-- [tasks.csv.example](/Users/sdlk/Documents/cursor_projects/SERPBridge/inputs/tasks.csv.example)
+- [tasks.csv.example](SERPBridge/inputs/tasks.csv.example)
 
 ## Config file
 
 All local config is inside:
 
-- [local_settings.py](/Users/sdlk/Documents/cursor_projects/SERPBridge/app/local_settings.py)
+- [local_settings.py](SERPBridge/app/local_settings.py)
 
 You can edit:
 
@@ -50,12 +50,12 @@ python3 run_tasks.py
 
 This mode reads:
 
-- [tasks.csv](/Users/sdlk/Documents/cursor_projects/SERPBridge/inputs/tasks.csv)
+- [tasks.csv](SERPBridge/inputs/tasks.csv)
 
 And writes:
 
-- [rank_storage.db](/Users/sdlk/Documents/cursor_projects/SERPBridge/data/rank_storage.db)
-- [exports](/Users/sdlk/Documents/cursor_projects/SERPBridge/exports)
+- [rank_storage.db](SERPBridge/data/rank_storage.db)
+- [exports](SERPBridge/exports)
 
 ## Run API
 
