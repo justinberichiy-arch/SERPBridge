@@ -1,0 +1,62 @@
+Metadata-Version: 2.4
+Name: serpbridge
+Version: 0.1.0
+Summary: Batch SERP rank checker with provider adapters
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.115.0
+Requires-Dist: httpx>=0.27.0
+Requires-Dist: pydantic>=2.8.0
+Requires-Dist: pydantic-settings>=2.4.0
+Requires-Dist: sqlalchemy>=2.0.32
+Requires-Dist: uvicorn>=0.30.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.3.0; extra == "dev"
+
+# SERPBridge
+
+Python service for batch SERP rank checks using provider adapters.
+
+## Current scope
+
+- SerpBase as the first provider
+- Google organic result matching
+- CSV import format: `domain,keywords`
+- SQLite persistence
+- CSV export per finished job
+
+## CSV input
+
+```csv
+domain,keywords
+openai.com,chatgpt###gpt api###ai chatbot
+notion.so,notion ai###docs app
+```
+
+## Environment
+
+```bash
+export SERPBASE_API_KEY=your_key
+```
+
+Optional:
+
+```bash
+export SQLITE_PATH=./serpbridge.db
+export EXPORT_DIR=./exports
+export WORKER_CONCURRENCY=5
+```
+
+## Run API
+
+```bash
+uvicorn app.main:app --reload
+```
+
+## Main endpoints
+
+- `POST /jobs/import-csv`
+- `GET /jobs/{job_id}`
+- `GET /jobs/{job_id}/items`
+- `POST /jobs/{job_id}/run`
+- `GET /jobs/{job_id}/export`
